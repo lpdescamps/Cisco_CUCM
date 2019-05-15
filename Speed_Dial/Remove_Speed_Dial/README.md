@@ -3,9 +3,9 @@ For example, you have a speed dial across your company called Reception with num
 You will to create credentials using Create_Login from [Login Credential](https://github.com/lpdescamps/Python/tree/master/credential)
 
 ## Dependencies
->cryptography module
->Zeep module
->encrypted credential for CUCM using Create_Login script
+> cryptography module  
+> zeep module  
+> encrypted credential for CUCM using Create_Login script  
 
 ## Remove_Speed_Dial.py
 >Details explaining each variables
