@@ -9,7 +9,7 @@ The python scripts are using Zeep to connect to CUCM API
 >Manipulating User's speed dial on their phone or phone profile. Remove, replace or find a specific speed dial.
 
 ## [Basic API Scripts](https://github.com/lpdescamps/Cisco_CUCM/tree/master/Basic)
->A list of simple python scripts for individual API elements in CUCM AXL. I like to call them debug because some return plain data that helps me to build cleverer scripts. A good link for references is https://developer.cisco.com/docs/axl-schema-reference/
+>A list of simple python scripts for individual API elements in CUCM AXL. I like to call them debug because some return plain data that helps me to build cleverer scripts. A good link for references is [Cisco  AXL Schema Reference](https://developer.cisco.com/docs/axl-schema-reference/)
 
 ## [Next one](https://github.com/lpdescamps/)
 >I'm slow ...
