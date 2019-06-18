@@ -1,6 +1,6 @@
 # Find Speed Dial - User guide
 For example, you have a speed dial across your company called Reception with number 123456. That number doesn't long exist and you need to know who has it from every phone and user device profile.
-You will to create credentials using Create_Login from [Login Credential](https://github.com/lpdescamps/Python/tree/master/credential)
+You will have to create credentials using Create_Login from [Login Credential](https://github.com/lpdescamps/Python/tree/master/credential)
 
 ## Dependencies
 > cryptography module  

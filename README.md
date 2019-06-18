@@ -11,5 +11,8 @@ The python scripts are using Zeep to connect to CUCM API
 ## [Basic API Scripts](Basic)
 >A list of simple python scripts for individual API elements in CUCM AXL. I like to call them debug because some return plain data that helps me to build cleverer scripts. A good link for references is [Cisco  AXL Schema Reference](https://developer.cisco.com/docs/axl-schema-reference/)
 
+## [Phone Services Scripts](Phone_Services)
+>Adding or removing phone services. Also adding the phone service as a soft button
+
 ## [Next one](https://github.com/lpdescamps)
 >I'm slow ...
