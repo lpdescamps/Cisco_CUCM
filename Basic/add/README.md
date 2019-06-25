@@ -16,7 +16,7 @@ under def main()
 * **path**: The path where your credentials are stored. See the README.md for Create_Login
 * **wsdl**: The path where your wsdl is stored.
 * **platform**: The platform we are using. I assume it would be CUCM_DEV as you want to test the script in a none production. See the README.md for Create_Login
-* **role**: To define the API user's permission. Here we need read permission so rwx. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login
 
 ## add_Route_List.py
 >Details explaining each variables
