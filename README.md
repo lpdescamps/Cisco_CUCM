@@ -14,5 +14,8 @@ The python scripts are using Zeep to connect to CUCM API
 ## [Phone Services Scripts](Phone_Services)
 >Adding or removing phone services. Also adding the phone service as a soft button
 
+## [UDP Scripts](UDP)
+>Updating, Creating, deleting UDP. Also assigning them to end user
+
 ## [Next one](https://github.com/lpdescamps)
 >I'm slow ...
