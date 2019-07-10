@@ -15,7 +15,7 @@ from zeep.helpers import serialize_object
 REGION = 'eo'
 #UDP = '8175005_UDP'
 UDP = 'ESMA_%'
-RANGEDN = '\+3491789'
+RANGEDN = '\+32'
 PREFIX = '817'
 SITE = 'EOESMAD'
 NEWMODEL = 'Cisco 8845'
@@ -50,9 +50,11 @@ def listUDP(client, udp):
             'name': udp,
         },
         'returnedTags': {
-            'name': ''
+            'name': '',
+            'model': ''
         }
     })
+
 def getUDP(client, udp):
     return client.getDeviceProfile(name=udp)
 def getLine(client, dn, dnpt):
@@ -148,12 +150,12 @@ def updateUser(client, user, *args):
             args[0]
         }
     })
-def myvariables(client, udps):
-    udp = getUDP(client, udps)['return']['deviceProfile']['name']
+def myvariables(client, udps, model):
     dn = [items['dirn']['pattern'] for items in getUDP(client, udps)['return']['deviceProfile']['lines']['line']][0]
     dnpt = [items['dirn']['routePartitionName']['_value_1'] for items in getUDP(client, udps)['return']['deviceProfile']['lines']['line']][0]
     local = getUDP(client, udps)['return']['deviceProfile']['userLocale']
-    rightudps = [items for items in getLine(client, dn, dnpt)['return']['line']['associatedDevices']['device']]
+    rightudps = [linkudp for linkudp in getLine(client, dn, dnpt)['return']['line']['associatedDevices']['device']]
+
     models = [getUDP(client, items)['return']['deviceProfile']['model'] for items in rightudps]
     modeltuple = tuple(zip(models, rightudps))
     newmodelcheck = [items for items in modeltuple if NEWMODEL in items]
@@ -174,11 +176,11 @@ def myvariables(client, udps):
         udplist = 'no_udplist'
 
     myvariables_dict = {
-        'udp': udp,
+        'udp': udps,
+        'model': model,
         'dn': dn,
         'dnpt': dnpt,
         'local': local,
-        'rightudps': rightudps[0],
         'models': models,
         'modeltuple': modeltuple,
         'newmodelcheck': newmodelcheck,
@@ -208,18 +210,19 @@ def main():
     client = Client(wsdl=wsdl, transport=transport)
     axl = client.create_service(binding_name, address)
 
+
     for udps in listUDP(axl, UDP)['return']['deviceProfile']:
-        if getUDP(axl, udps)['return']['deviceProfile']['lines'] is None:
+        if getUDP(axl, udps['name'])['return']['deviceProfile']['lines'] is None:
             print(udps['name'], 'has no Directory Number')
             print('#####The End#########The End#########The End#########The End####')
             pass
         else:
-            dn = [items['dirn']['pattern'] for items in getUDP(axl, udps)['return']['deviceProfile']['lines']['line']][0]
+            dn = [items['dirn']['pattern'] for items in getUDP(axl, udps['name'])['return']['deviceProfile']['lines']['line']][0]
+
             if dn.startswith(RANGEDN) is True:
-                mystuff = myvariables(axl, udps['name'])
-                print(mystuff)
-                for udp in mystuff['newmodelcheck']:
-                    print('UDP ' + udp[1] + ' on directory number ' + mystuff['dn'] + ' already exist for model ' + NEWMODEL)
+                mystuff = myvariables(axl, udps['name'], udps['model'])
+                if NEWMODEL in mystuff['model']:
+                    print('UDP ' + mystuff['udp'] + ' on directory number ' + mystuff['dn'] + ' already exist for model ' + NEWMODEL)
                     print('#####The End#########The End#########The End#########The End####')
                 if not mystuff['newmodelcheck']:
                     if not mystuff['newmodelcheck'] and mystuff['userid'] == 'no_userid':
@@ -260,6 +263,8 @@ def main():
                                    mystuff['userid'],
                                    mystuff['udplist'])
                         print('#####The End#########The End#########The End#########The End####')
+                else:
+                    pass
             else:
                 pass
 

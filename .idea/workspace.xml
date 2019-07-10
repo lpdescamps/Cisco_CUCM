@@ -4,6 +4,7 @@
     <list default="true" id="3f72a04e-6eb4-432e-8a4d-9ccd9f93f449" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" beforeDir="false" afterPath="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UDP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/UDP/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,21 +56,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="177" column="20" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="20" />
+            <state relative-caret-position="593">
+              <caret line="266" column="10" selection-start-line="266" selection-start-column="10" selection-end-line="266" selection-end-column="10" />
               <folding>
                 <element signature="e#25#48#0" expanded="true" />
-                <element signature="e#625#854#0" />
-                <element signature="e#886#1327#0" />
-                <element signature="e#1348#1471#0" />
-                <element signature="e#1502#1667#0" />
-                <element signature="e#1697#1737#0" />
-                <element signature="e#1773#1830#0" />
-                <element signature="e#1862#1896#0" />
-                <element signature="e#1943#2933#0" />
-                <element signature="e#3019#4612#0" />
-                <element signature="e#4665#4838#0" />
-                <element signature="e#4880#5011#0" />
+                <element signature="e#605#834#0" />
+                <element signature="e#866#1307#0" />
+                <element signature="e#1328#1451#0" />
+                <element signature="e#1482#1647#0" />
+                <element signature="e#1677#1717#0" />
+                <element signature="e#1753#1810#0" />
+                <element signature="e#1842#1876#0" />
+                <element signature="e#1924#2914#0" />
+                <element signature="e#3000#4593#0" />
+                <element signature="e#4646#4819#0" />
+                <element signature="e#4861#4992#0" />
               </folding>
             </state>
           </provider>
@@ -168,9 +169,9 @@
         <option value="$PROJECT_DIR$/Basic/get/README.md" />
         <option value="$PROJECT_DIR$/UDP/UDP_to_User.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" />
         <option value="$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py" />
         <option value="$PROJECT_DIR$/UDP/README.md" />
+        <option value="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" />
       </list>
     </option>
   </component>
@@ -348,11 +349,19 @@
       <option name="project" value="LOCAL" />
       <updated>1562250943287</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adding updateUDP_CFWD script&#10;Modified CreateUDP_By_DN to make it 5 times faster using dict instead of running multiple api">
+      <created>1562750697192</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562750697192</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.1932886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -400,7 +409,8 @@
     <MESSAGE value="Adding Phone services" />
     <MESSAGE value="Adding basic scripts" />
     <MESSAGE value="Adding create udp by DN script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding create udp by DN script" />
+    <MESSAGE value="Adding updateUDP_CFWD script&#10;Modified CreateUDP_By_DN to make it 5 times faster using dict instead of running multiple api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding updateUDP_CFWD script&#10;Modified CreateUDP_By_DN to make it 5 times faster using dict instead of running multiple api" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/README.md">
@@ -623,21 +633,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="177" column="20" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="20" />
+        <state relative-caret-position="593">
+          <caret line="266" column="10" selection-start-line="266" selection-start-column="10" selection-end-line="266" selection-end-column="10" />
           <folding>
             <element signature="e#25#48#0" expanded="true" />
-            <element signature="e#625#854#0" />
-            <element signature="e#886#1327#0" />
-            <element signature="e#1348#1471#0" />
-            <element signature="e#1502#1667#0" />
-            <element signature="e#1697#1737#0" />
-            <element signature="e#1773#1830#0" />
-            <element signature="e#1862#1896#0" />
-            <element signature="e#1943#2933#0" />
-            <element signature="e#3019#4612#0" />
-            <element signature="e#4665#4838#0" />
-            <element signature="e#4880#5011#0" />
+            <element signature="e#605#834#0" />
+            <element signature="e#866#1307#0" />
+            <element signature="e#1328#1451#0" />
+            <element signature="e#1482#1647#0" />
+            <element signature="e#1677#1717#0" />
+            <element signature="e#1753#1810#0" />
+            <element signature="e#1842#1876#0" />
+            <element signature="e#1924#2914#0" />
+            <element signature="e#3000#4593#0" />
+            <element signature="e#4646#4819#0" />
+            <element signature="e#4861#4992#0" />
           </folding>
         </state>
       </provider>
