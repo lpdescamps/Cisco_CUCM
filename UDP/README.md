@@ -39,3 +39,22 @@ under def main()
 * **wsdl**: The path where your wsdl is stored.
 * **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
 * **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login
+
+## UpdateUDP_CFWD
+This script will read a txt file that contains EndUser ID. It will
+ - Find the user in enduser and collect information. 
+ - Update the user's UDP.
+ 
+>Details explaining each variables
+* **REGION**: Where is your cluster. See the README.md for Create_Login  
+* **VMFWD**: true or false to tick the forward to voicemail
+* **CSSFWD**: calling search space for the call forward fields
+* **FILE**: = text file containing the user. One per line
+* **SITE**: It will be used for line and UDP description. For example EUBEBRU would be my site code (EU: Europe, BE: Belgium, BRU: Brussels) and my description would be EUBEBRU - LouisP Descamps - 8176789
+* **CFWUR_CSS** = calling search space for the Forward Unregistered fields
+
+under def main()
+* **path**: The path where your credentials are stored. See the README.md for Create_Login
+* **wsdl**: The path where your wsdl is stored.
+* **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login

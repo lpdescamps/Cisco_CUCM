@@ -12,13 +12,14 @@ from pathlib import Path
 from collections import OrderedDict
 from zeep.helpers import serialize_object
 
-REGION = 'Whatever region'
-UDP = '%'
-RANGEDN = '\+32'
+REGION = 'eo'
+#UDP = '8175005_UDP'
+UDP = 'ESMA_%'
+RANGEDN = '\+3491789'
 PREFIX = '817'
-SITE = 'EIBEBRU'
+SITE = 'EOESMAD'
 NEWMODEL = 'Cisco 8845'
-PTN = 'phone button template with 2 URI'
+PTN = 'GL_UUID_1LSD2URISDs_SIP-pbtc'
 
 def file(path, platform, role):
     username = path / REGION / platform / ('user_' + role + '.txt')
@@ -59,6 +60,7 @@ def getLine(client, dn, dnpt):
 def getUser(client, user):
     return client.getUser(userid=user)
 def sql_get_user_items(service, udp, dn):
+
     sql_statement = \
         "SELECT " \
             "E.firstname, E.lastname, E.userid " \
@@ -146,6 +148,49 @@ def updateUser(client, user, *args):
             args[0]
         }
     })
+def myvariables(client, udps):
+    udp = getUDP(client, udps)['return']['deviceProfile']['name']
+    dn = [items['dirn']['pattern'] for items in getUDP(client, udps)['return']['deviceProfile']['lines']['line']][0]
+    dnpt = [items['dirn']['routePartitionName']['_value_1'] for items in getUDP(client, udps)['return']['deviceProfile']['lines']['line']][0]
+    local = getUDP(client, udps)['return']['deviceProfile']['userLocale']
+    rightudps = [items for items in getLine(client, dn, dnpt)['return']['line']['associatedDevices']['device']]
+    models = [getUDP(client, items)['return']['deviceProfile']['model'] for items in rightudps]
+    modeltuple = tuple(zip(models, rightudps))
+    newmodelcheck = [items for items in modeltuple if NEWMODEL in items]
+
+    try:
+        newudp = sql_get_user_items(client, rightudps[0], dn)[0]
+        desc = sql_get_user_items(client, rightudps[0], dn)[1]
+        ldisplay = sql_get_user_items(client, rightudps[0], dn)[2]
+        llabel = sql_get_user_items(client, rightudps[0], dn)[3]
+        userid = sql_get_user_items(client, rightudps[0], dn)[4]
+        udplist = [items['_value_1'] for items in getUser(client, userid)['return']['user']['phoneProfiles']['profileName']]
+    except:
+        newudp = PREFIX + str(dn[-4:]) + '_' + str(NEWMODEL[-4:]) + '-udp'
+        desc = 'FREE ' + SITE + '_firstname lastname_' + PREFIX + str(dn[-4:])
+        ldisplay = 'firstname lastname'
+        llabel = 'firstname lastname - ' + PREFIX + str(dn[-4:])
+        userid = 'no_userid'
+        udplist = 'no_udplist'
+
+    myvariables_dict = {
+        'udp': udp,
+        'dn': dn,
+        'dnpt': dnpt,
+        'local': local,
+        'rightudps': rightudps[0],
+        'models': models,
+        'modeltuple': modeltuple,
+        'newmodelcheck': newmodelcheck,
+        'newudp': newudp,
+        'desc': desc,
+        'ldisplay': ldisplay,
+        'llabel': llabel,
+        'userid': userid,
+        'udplist': udplist
+    }
+
+    return myvariables_dict
 
 def main():
     path = Path('C:\\shared\\API\\credentials')
@@ -164,50 +209,57 @@ def main():
     axl = client.create_service(binding_name, address)
 
     for udps in listUDP(axl, UDP)['return']['deviceProfile']:
-        udp = getUDP(axl, udps)['return']['deviceProfile']['name']
         if getUDP(axl, udps)['return']['deviceProfile']['lines'] is None:
-            print(udp, 'has no Directory Number')
+            print(udps['name'], 'has no Directory Number')
             print('#####The End#########The End#########The End#########The End####')
             pass
         else:
             dn = [items['dirn']['pattern'] for items in getUDP(axl, udps)['return']['deviceProfile']['lines']['line']][0]
-            dnpt = [items['dirn']['routePartitionName']['_value_1'] for items in getUDP(axl, udps)['return']['deviceProfile']['lines']['line']][0]
-            local = getUDP(axl, udps)['return']['deviceProfile']['userLocale']
-
             if dn.startswith(RANGEDN) is True:
-                udps = [items for items in getLine(axl,dn,dnpt)['return']['line']['associatedDevices']['device']]
-                models = [getUDP(axl, items)['return']['deviceProfile']['model'] for items in udps]
-                modeltuple = tuple(zip(models, udps))
-                newmodelcheck = [items for items in modeltuple if NEWMODEL in items]
-
-                for items in newmodelcheck:
-                    print('UDP ' + items[1] + ' on directory number ' + dn + ' already exist for model ' + NEWMODEL)
+                mystuff = myvariables(axl, udps['name'])
+                print(mystuff)
+                for udp in mystuff['newmodelcheck']:
+                    print('UDP ' + udp[1] + ' on directory number ' + mystuff['dn'] + ' already exist for model ' + NEWMODEL)
                     print('#####The End#########The End#########The End#########The End####')
-
-                if not newmodelcheck:
-                    try:
-                        newudp = sql_get_user_items(axl, udp, dn)[0]
-                        desc = sql_get_user_items(axl, udp, dn)[1]
-                        ldisplay = sql_get_user_items(axl, udp, dn)[2]
-                        llabel = sql_get_user_items(axl, udp, dn)[3]
-                        userid = sql_get_user_items(axl, udp, dn)[4]
-                        udplist = [items['_value_1'] for items in getUser(axl, userid)['return']['user']['phoneProfiles']['profileName']]
-                        print("Cool! I found an enduser! Let's create the UDP: " + newudp + ' with description: ' + desc)
-                        addUDP(axl, newudp, NEWMODEL, desc, PTN, local, dn, dnpt, llabel, ldisplay)
-                        updateLine(axl, dn, dnpt, desc, ldisplay)
-                        udplist.append(newudp)
-                        updateUser(axl, userid, udplist)
+                if not mystuff['newmodelcheck']:
+                    if not mystuff['newmodelcheck'] and mystuff['userid'] == 'no_userid':
+                        print("Looks like a free UDP to me! Didnt find an enduser! Let's create the FREE UDP: " + mystuff['newudp'] + ' with description: ' + mystuff['desc'])
+                        addUDP(axl,
+                               mystuff['newudp'],
+                               NEWMODEL, mystuff['desc'],
+                               PTN, mystuff['local'],
+                               mystuff['dn'],
+                               mystuff['dnpt'],
+                               mystuff['llabel'],
+                               mystuff['ldisplay'])
+                        updateLine(axl,
+                                   mystuff['dn'],
+                                   mystuff['dnpt'],
+                                   mystuff['desc'],
+                                   mystuff['ldisplay'])
                         print('#####The End#########The End#########The End#########The End####')
-                    except:
-                        newudp = PREFIX + str(dn[-4:]) + '_' + str(NEWMODEL[-4:]) + '-udp'
-                        desc = 'FREE ' + SITE + '_firstname lastname_' + PREFIX + str(dn[-4:])
-                        ldisplay = 'firstname lastname'
-                        llabel = 'firstname lastname - ' + PREFIX + str(dn[-4:])
-                        print("Looks like a free UDP to me! Didnt find an enduser! Let's create the FREE UDP: " + newudp + ' with description: ' + desc)
-                        addUDP(axl, newudp, NEWMODEL, desc, PTN, local, dn, dnpt, llabel, ldisplay)
-                        updateLine(axl, dn, dnpt, desc, ldisplay)
+                    else:
+                        print("Cool! I found an enduser! Let's create the UDP: " + mystuff['newudp'] + ' with description: ' + mystuff['desc'])
+                        addUDP(axl,
+                               mystuff['newudp'],
+                               NEWMODEL,
+                               mystuff['desc'],
+                               PTN,
+                               mystuff['local'],
+                               mystuff['dn'],
+                               mystuff['dnpt'],
+                               mystuff['llabel'],
+                               mystuff['ldisplay'])
+                        updateLine(axl,
+                                   mystuff['dn'],
+                                   mystuff['dnpt'],
+                                   mystuff['desc'],
+                                   mystuff['ldisplay'])
+                        mystuff['udplist'].append(mystuff['newudp'])
+                        updateUser(axl,
+                                   mystuff['userid'],
+                                   mystuff['udplist'])
                         print('#####The End#########The End#########The End#########The End####')
-
             else:
                 pass
 
