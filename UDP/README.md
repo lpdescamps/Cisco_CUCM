@@ -24,7 +24,8 @@ This script will scan the cucm based on a DN range. It will
  - Pull information from End user to build the new UDP. If no enduser, it will create a orphean UDP.
  - If end user exists, it will add the udp to the end user BUT won't remove the old UDP.
 The UDP will have 2 uri but you can amend this under def addUDP
- 
+![Diagram](CreateUDP_by_DN.svg)
+
 >Details explaining each variables
 * **REGION**: Where is your cluster. See the README.md for Create_Login  
 * **UDP**: You can narrow down to a specific User Device Profile or use the wildcard %
