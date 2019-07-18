@@ -13,7 +13,7 @@ from collections import OrderedDict
 from zeep.helpers import serialize_object
 import unicodedata
 
-REGION = 'what region'
+REGION = 'what is region'
 UDP = '%'
 RANGEDN = '\+321245'
 PREFIX = '817'
