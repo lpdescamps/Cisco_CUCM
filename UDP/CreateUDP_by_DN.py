@@ -11,11 +11,11 @@ from cryptography.fernet import Fernet
 from pathlib import Path
 from collections import OrderedDict
 from zeep.helpers import serialize_object
+import unicodedata
 
-REGION = 'eo'
-#UDP = '8175005_UDP'
-UDP = 'ESMA_%'
-RANGEDN = '\+32'
+REGION = 'what region'
+UDP = '%'
+RANGEDN = '\+321245'
 PREFIX = '817'
 SITE = 'EOESMAD'
 NEWMODEL = 'Cisco 8845'
@@ -51,7 +51,8 @@ def listUDP(client, udp):
         },
         'returnedTags': {
             'name': '',
-            'model': ''
+            'model': '',
+            'class': ''
         }
     })
 
@@ -76,10 +77,11 @@ def sql_get_user_items(service, udp, dn):
     axl_resp = service.executeSQLQuery(sql=sql_statement)
     table = [OrderedDict((element.tag, element.text) for element in row) for row in
             serialize_object(axl_resp)["return"]["row"]]
-    firstname = [items['firstname'] for items in table][0]
-    lastname = [items['lastname'] for items in table][0]
+    firstnameraw = [items['firstname'] for items in table][0].split()[0]
+    firstname = unicodedata.normalize('NFD', firstnameraw).encode('ascii', 'ignore').decode("utf-8")
+    lastnameraw = [items['lastname'] for items in table][0].split()[0]
+    lastname = unicodedata.normalize('NFD', lastnameraw).encode('ascii', 'ignore').decode("utf-8")
     userid = [items['userid'] for items in table][0]
-
     newudp = userid + '_' + str(NEWMODEL[-4:]) + '-udp'
     desc = SITE + '_' + firstname + ' ' + lastname + '_' + PREFIX + str(dn[-4:])
     ldisplay = firstname + ' ' + lastname
@@ -142,14 +144,20 @@ def updateLine(client, dn, pt, desc, ldisplay):
     'alertingName': ldisplay,
     'asciiAlertingName': ldisplay
     })
-def updateUser(client, user, *args):
+def updateUser(client, user, local, *args):
     return client.updateUser(**{
     'userid': user,
+    'userLocale': local,
     'phoneProfiles': {
         'profileName':
             args[0]
         }
     })
+def delUDP(client,udp):
+    return client.removeDeviceProfile(**{
+    'name': udp
+    })
+
 def myvariables(client, udps, model):
     dn = [items['dirn']['pattern'] for items in getUDP(client, udps)['return']['deviceProfile']['lines']['line']][0]
     dnpt = [items['dirn']['routePartitionName']['_value_1'] for items in getUDP(client, udps)['return']['deviceProfile']['lines']['line']][0]
@@ -210,15 +218,17 @@ def main():
     client = Client(wsdl=wsdl, transport=transport)
     axl = client.create_service(binding_name, address)
 
-
     for udps in listUDP(axl, UDP)['return']['deviceProfile']:
-        if getUDP(axl, udps['name'])['return']['deviceProfile']['lines'] is None:
-            print(udps['name'], 'has no Directory Number')
-            print('#####The End#########The End#########The End#########The End####')
-            pass
+        if getUDP(axl, udps['name'])['return']['deviceProfile']['lines'] is None:# and 'ModelProfileFor' not in udps['name']:
+            if 'ModelProfileFor' not in udps['name']:
+                delUDP(axl, udps['name'])
+                print(udps['name'], 'has no Directory Number and has been deleted')
+                print('#####The End#########The End#########The End#########The End####')
+                pass
+            else:
+                pass
         else:
             dn = [items['dirn']['pattern'] for items in getUDP(axl, udps['name'])['return']['deviceProfile']['lines']['line']][0]
-
             if dn.startswith(RANGEDN) is True:
                 mystuff = myvariables(axl, udps['name'], udps['model'])
                 if NEWMODEL in mystuff['model']:
@@ -261,6 +271,7 @@ def main():
                         mystuff['udplist'].append(mystuff['newudp'])
                         updateUser(axl,
                                    mystuff['userid'],
+                                   mystuff['local'],
                                    mystuff['udplist'])
                         print('#####The End#########The End#########The End#########The End####')
                 else:

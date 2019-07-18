@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f72a04e-6eb4-432e-8a4d-9ccd9f93f449" name="Default Changelist" comment="" />
+    <list default="true" id="3f72a04e-6eb4-432e-8a4d-9ccd9f93f449" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" beforeDir="false" afterPath="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/Remove_Speed_Dial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="1530">
               <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
               <folding>
                 <element signature="e#25#48#0" expanded="true" />
@@ -28,8 +31,8 @@
         <entry file="file://$PROJECT_DIR$/UDP/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="952">
-                <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
+              <first_editor relative-caret-position="442">
+                <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -37,10 +40,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Speed_Dial/Find_Speed_Dial/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="191">
+              <first_editor relative-caret-position="204">
                 <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="86" />
               </first_editor>
               <second_editor />
@@ -51,22 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-              <folding>
-                <element signature="e#25#48#0" expanded="true" />
-                <element signature="e#605#834#0" />
-                <element signature="e#866#1307#0" />
-                <element signature="e#1328#1451#0" />
-                <element signature="e#1703#1743#0" />
-                <element signature="e#1779#1836#0" />
-                <element signature="e#1868#1902#0" />
-                <element signature="e#1950#2940#0" />
-                <element signature="e#3026#4619#0" />
-                <element signature="e#4672#4845#0" />
-                <element signature="e#4887#5018#0" />
-                <element signature="e#5061#6940#0" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="14" selection-end-line="270" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -74,10 +68,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+            <state relative-caret-position="85">
+              <caret line="5" column="28" selection-end-line="151" selection-end-column="10" />
               <folding>
-                <element signature="e#25#48#0" expanded="true" />
                 <element signature="e#520#749#0" />
                 <element signature="e#781#1222#0" />
                 <element signature="e#1243#1366#0" />
@@ -105,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basic/get/get_USER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="765">
               <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
             </state>
           </provider>
@@ -114,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UDP/UDP_to_User.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
+            <state relative-caret-position="1411">
               <caret line="91" selection-start-line="91" selection-end-line="91" />
               <folding>
                 <element signature="e#25#48#0" expanded="true" />
@@ -136,6 +129,7 @@
     <findStrings>
       <find>read</find>
       <find>getuser</find>
+      <find>['return']['line']['associatedDevices']['device']</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,17 +165,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-2043" />
+    <option name="y" value="165" />
+    <option name="width" value="1934" />
+    <option name="height" value="1037" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,12 +185,18 @@
             <path>
               <item name="Cisco_CUCM" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cisco_CUCM" type="462c0819:PsiDirectoryNode" />
+              <item name="Phone_Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cisco_CUCM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cisco_CUCM" type="462c0819:PsiDirectoryNode" />
               <item name="UDP" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,13 +364,20 @@
       <option name="project" value="LOCAL" />
       <updated>1562763082260</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Adding diagram">
+      <created>1562763342236</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562763342236</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1932886" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -382,7 +388,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32152975" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32152975" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -420,7 +426,8 @@
     <MESSAGE value="Adding updateUDP_CFWD script&#10;Modified CreateUDP_By_DN to make it 5 times faster using dict instead of running multiple api" />
     <MESSAGE value="Modified CreateUDP_By_DN to add udp model to dict" />
     <MESSAGE value="Adding diagrams" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding diagrams" />
+    <MESSAGE value="Adding diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding diagram" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/README.md">
@@ -545,60 +552,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/Remove_Speed_Dial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
-          <folding>
-            <element signature="e#25#48#0" expanded="true" />
-            <element signature="e#1798#2056#0" />
-            <element signature="e#2089#2122#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UDP/UDP_to_User.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#25#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="259">
             <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Speed_Dial/Find_Speed_Dial/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="191">
-            <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="86" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basic/get/get_USER.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Phone_Services/Add_Phone_Service/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="204">
-            <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>
@@ -614,11 +572,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/Remove_Speed_Dial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
+          <folding>
+            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#1798#2056#0" />
+            <element signature="e#2089#2122#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UDP/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="952">
-            <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
+          <first_editor relative-caret-position="442">
+            <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Speed_Dial/Find_Speed_Dial/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="86" />
           </first_editor>
           <second_editor />
         </state>
@@ -626,10 +609,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+        <state relative-caret-position="85">
+          <caret line="5" column="28" selection-end-line="151" selection-end-column="10" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
             <element signature="e#520#749#0" />
             <element signature="e#781#1222#0" />
             <element signature="e#1243#1366#0" />
@@ -641,24 +623,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
+    <entry file="file://$PROJECT_DIR$/Phone_Services/Add_Phone_Service/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basic/get/get_USER.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="765">
+          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UDP/UDP_to_User.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
           <folding>
             <element signature="e#25#48#0" expanded="true" />
-            <element signature="e#605#834#0" />
-            <element signature="e#866#1307#0" />
-            <element signature="e#1328#1451#0" />
-            <element signature="e#1703#1743#0" />
-            <element signature="e#1779#1836#0" />
-            <element signature="e#1868#1902#0" />
-            <element signature="e#1950#2940#0" />
-            <element signature="e#3026#4619#0" />
-            <element signature="e#4672#4845#0" />
-            <element signature="e#4887#5018#0" />
-            <element signature="e#5061#6940#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="14" selection-end-line="270" selection-end-column="10" />
         </state>
       </provider>
     </entry>
