@@ -17,6 +17,7 @@ CSSFWD = 'UK_LD_Call_FWD_SIP'
 FILE = 'C://shared//API//udp.txt'
 SITE = 'EOGBLDS_CIC'
 CFWUR_CSS = 'APP_CIC_FWD'
+PREFIX = '814'
 
 def file(path, platform, role):
     username = path / REGION / platform / ('user_' + role + '.txt')
@@ -50,8 +51,9 @@ def data_from_file():
 
 def getUser(client, username):
     return client.getUser(userid=username)
+def getUDP(client, udp):
+    return client.getDeviceProfile(name=udp)
 def updateLine(client, pattern, pt, site, firstname, lastname, extension, cfwd, cic_cfwd):
-    print(pattern)
     return client.updateLine(**{
         'pattern': pattern,
         'routePartitionName': pt,
@@ -80,28 +82,36 @@ def updateUDP(client, udp, site, firstname, lastname, extension):
 def myvariables(client, userid):
     firstname = (getUser(client, userid)['return']['user']['firstName'])
     lastname = (getUser(client, userid)['return']['user']['lastName'])
-    extension = (getUser(client, userid)['return']['user']['telephoneNumber'])
-    extlast4 = str(extension[-4:])
-    udplist = [udp['_value_1'] for udp in getUser(client, userid)['return']['user']['phoneProfiles']['profileName']]
 
-    for udp in udplist:
-        laaplist = [laap for laap in getUser(client, userid)['return']['user']['lineAppearanceAssociationForPresences'][
-            'lineAppearanceAssociationForPresence']
-                 if laap['laapDeviceName'] in udp]
-        theudp = [laap['laapDeviceName'] for laap in laaplist if extlast4 in laap['laapDirectory']][0]
-        dn = [str(laap['laapDirectory']).replace('\\', '') for laap in laaplist if extlast4 in laap['laapDirectory']][0]
-        pt = [laap['laapPartition'] for laap in laaplist if extlast4 in laap['laapDirectory']][0]
+    try:
+        extension = (getUser(client, userid)['return']['user']['telephoneNumber'])
+        extlast4 = str(extension[-4:])
+        udplist = [udp['_value_1'] for udp in getUser(client, userid)['return']['user']['phoneProfiles']['profileName']]
+        for udp in udplist:
+            laaplist = [laap for laap in getUser(client, userid)['return']['user']['lineAppearanceAssociationForPresences'][
+                'lineAppearanceAssociationForPresence']
+                     if laap['laapDeviceName'] in udp]
+            theudp = [laap['laapDeviceName'] for laap in laaplist if extlast4 in laap['laapDirectory']][0]
+            dirn = [str(laap['laapDirectory']).replace('\\', '') for laap in laaplist if extlast4 in laap['laapDirectory']][0]
+            pt = [laap['laapPartition'] for laap in laaplist if extlast4 in laap['laapDirectory']][0]
 
-        myvariables_dict = {
-            'firstname': firstname,
-            'lastname': lastname,
-            'ext': extension,
-            'fwddn': dn,
-            'pt': pt,
-            'udp': theudp
-        }
+    except:
+        print("Couln't find ext in Telephone Number from AD for user: " + userid)
+        theudp = [udp['_value_1'] for udp in getUser(client, userid)['return']['user']['phoneProfiles']['profileName']][0]
+        dirn = [str(items['dirn']['pattern']).replace('\\', '') for items in getUDP(client, theudp)['return']['deviceProfile']['lines']['line']][0]
+        pt = [items['dirn']['routePartitionName']['_value_1'] for items in getUDP(client, theudp)['return']['deviceProfile']['lines']['line']][0]
+        extension = PREFIX + str(dirn[-4:])
 
-        return myvariables_dict
+    myvariables_dict = {
+        'firstname': firstname,
+        'lastname': lastname,
+        'ext': str(extension),
+        'fwddn': dirn,
+        'pt': pt,
+        'udp': theudp
+    }
+
+    return myvariables_dict
 
 def main():
     path = Path('C:\\shared\\API\\credentials')
@@ -120,33 +130,41 @@ def main():
     axl = client.create_service(binding_name, address)
 
     for userid in data_from_file():
-        print(myvariables(axl, userid))
 
-        cfwd = {'forwardToVoiceMail': VMFWD,
-                'callingSearchSpaceName': {'_value_1': CSSFWD},
-                'destination': None}
+        try:
 
-        cfwur = {'forwardToVoiceMail': VMFWD,
-                    'callingSearchSpaceName': {'_value_1': CFWUR_CSS},
-                    'destination': myvariables(axl, userid)['fwddn']}
+            mystuff = myvariables(axl, userid)
+            print(mystuff)
 
-        updateLine(axl,
-                   '\\' + str(myvariables(axl, userid)['fwddn']),
-                   myvariables(axl, userid)['pt'],
-                   SITE,
-                   myvariables(axl, userid)['firstname'],
-                   myvariables(axl, userid)['lastname'],
-                   myvariables(axl, userid)['ext'],
-                   cfwd,
-                   cfwur,
-                   )
-        updateUDP(axl,
-                  myvariables(axl, userid)['udp'],
-                  SITE,
-                  myvariables(axl, userid)['firstname'],
-                  myvariables(axl, userid)['lastname'],
-                  myvariables(axl, userid)['ext']
-                  )
+            cfwd = {'forwardToVoiceMail': VMFWD,
+                    'callingSearchSpaceName': {'_value_1': CSSFWD},
+                    'destination': None}
+
+            cfwur = {'forwardToVoiceMail': VMFWD,
+                        'callingSearchSpaceName': {'_value_1': CFWUR_CSS},
+                        'destination': mystuff['fwddn']}
+
+            updateLine(axl,
+                       '\\' + str(mystuff['fwddn']),
+                       mystuff['pt'],
+                       SITE,
+                       mystuff['firstname'],
+                       mystuff['lastname'],
+                       mystuff['ext'],
+                       cfwd,
+                       cfwur,
+                       )
+            updateUDP(axl,
+                      mystuff['udp'],
+                      SITE,
+                      mystuff['firstname'],
+                      mystuff['lastname'],
+                      mystuff['ext']
+                      )
+        except:
+            print('No user ID found for: ' + userid)
+            pass
+
 
 if __name__ == '__main__':
     main()
