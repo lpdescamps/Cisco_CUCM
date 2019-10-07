@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f72a04e-6eb4-432e-8a4d-9ccd9f93f449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Scanner/NumberScanner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scanner/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" beforeDir="false" afterPath="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,32 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/Remove_Speed_Dial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
-              <folding>
-                <element signature="e#25#48#0" expanded="true" />
-                <element signature="e#1798#2056#0" />
-                <element signature="e#2089#2122#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UDP/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="442">
-                <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.svg">
           <provider selected="true" editor-type-id="images" />
@@ -56,11 +32,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="14" selection-end-line="270" selection-end-column="10" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="14" />
+              <folding>
+                <element signature="e#25#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,16 +47,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="28" selection-end-line="151" selection-end-column="10" />
+            <state relative-caret-position="578">
+              <caret line="116" selection-start-line="116" selection-end-line="129" selection-end-column="54" />
               <folding>
-                <element signature="e#520#749#0" />
-                <element signature="e#781#1222#0" />
-                <element signature="e#1243#1366#0" />
-                <element signature="e#1393#1511#0" />
-                <element signature="e#1548#1586#0" />
-                <element signature="e#1682#2572#0" />
-                <element signature="e#2643#2793#0" />
+                <element signature="e#25#48#0" expanded="true" />
+                <element signature="e#535#764#0" />
+                <element signature="e#796#1237#0" />
+                <element signature="e#1258#1381#0" />
+                <element signature="e#1408#1526#0" />
+                <element signature="e#1563#1601#0" />
+                <element signature="e#1631#1671#0" />
+                <element signature="e#1767#2638#0" />
+                <element signature="e#2709#2859#0" />
+                <element signature="e#2898#4663#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scanner/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="344">
+                <caret line="23" selection-start-line="23" selection-end-line="23" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="310">
+                <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scanner/NumberScanner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="18" selection-end-column="98" />
+              <folding>
+                <element signature="e#24#47#0" expanded="true" />
+                <element signature="e#672#901#0" />
+                <element signature="e#933#1374#0" />
+                <element signature="e#1395#1518#0" />
+                <element signature="e#1547#2409#0" />
+                <element signature="e#2444#3519#0" />
+                <element signature="e#3546#4489#0" />
+                <element signature="e#4516#5453#0" />
+                <element signature="e#5480#6414#0" />
+                <element signature="e#6446#7340#0" />
+                <element signature="e#7370#8256#0" />
+                <element signature="e#8287#9228#0" />
+                <element signature="e#9251#9794#0" />
+                <element signature="e#9817#10354#0" />
+                <element signature="e#10377#10911#0" />
+                <element signature="e#10940#11363#0" />
+                <element signature="e#11390#11805#0" />
+                <element signature="e#11849#12270#0" />
+                <element signature="e#12314#12735#0" />
+                <element signature="e#12776#13194#0" />
+                <element signature="e#13259#13618#0" />
+                <element signature="e#13682#14038#0" />
+                <element signature="e#14073#14813#0" />
+                <element signature="e#14847#15315#0" />
+                <element signature="e#15348#15381#0" />
+                <element signature="e#15418#15732#0" />
               </folding>
             </state>
           </provider>
@@ -157,24 +200,27 @@
         <option value="$PROJECT_DIR$/Basic/get/get_Line.py" />
         <option value="$PROJECT_DIR$/Basic/get/README.md" />
         <option value="$PROJECT_DIR$/UDP/UDP_to_User.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py" />
         <option value="$PROJECT_DIR$/UDP/README.md" />
         <option value="$PROJECT_DIR$/UDP/CreateUDP_by_DN.py" />
+        <option value="$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py" />
+        <option value="$PROJECT_DIR$/Scanner/NumberScanner.py" />
+        <option value="$PROJECT_DIR$/Scanner/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2043" />
-    <option name="y" value="165" />
-    <option name="width" value="1934" />
-    <option name="height" value="1037" />
+    <option name="x" value="-1929" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,33 +231,27 @@
             <path>
               <item name="Cisco_CUCM" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cisco_CUCM" type="462c0819:PsiDirectoryNode" />
-              <item name="Phone_Services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cisco_CUCM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cisco_CUCM" type="462c0819:PsiDirectoryNode" />
-              <item name="UDP" type="462c0819:PsiDirectoryNode" />
+              <item name="Scanner" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Phone_Services\Add_Phone_Service" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Scanner" />
       <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\UDP" />
       <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Basic\get" />
       <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Basic\list" />
       <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Phone_Services\Add_Phone_Service" />
-      <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Basic\add" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ldescamp\PycharmProjects\Cisco_CUCM\Phone_Services\Add_Phone_Service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -371,13 +411,34 @@
       <option name="project" value="LOCAL" />
       <updated>1562763342236</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Adding diagram">
+      <created>1563456260840</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1563456260840</updated>
+    </task>
+    <task id="LOCAL-00014" summary="- Remove orphan UDP. UDP without DN&#10;- Use the 1st block of Firstname and Lastname to avoid exceeding the maximum of 30 character&#10;-Normalise special character like àéêöhello from 1stName and Last name&#10;-Update the local in enduser to match the local in UDP&#10;-Ignore UDP templates">
+      <created>1563456437534</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1563456437534</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added except if phone numbder not found in end user">
+      <created>1563803801001</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1563803801002</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-1927" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -388,7 +449,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32152975" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32152975" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -427,7 +488,10 @@
     <MESSAGE value="Modified CreateUDP_By_DN to add udp model to dict" />
     <MESSAGE value="Adding diagrams" />
     <MESSAGE value="Adding diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding diagram" />
+    <MESSAGE value="- Remove orphan UDP. UDP without DN&#10;- Use the 1st block of Firstname and Lastname to avoid exceeding the maximum of 30 character&#10;-Normalise special character like àéêöhello from 1stName and Last name&#10;-Update the local in enduser to match the local in UDP&#10;-Ignore UDP templates" />
+    <MESSAGE value="added except if phone numbder not found in end user" />
+    <MESSAGE value="adding numberscanner" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding numberscanner" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Speed_Dial/Remove_Speed_Dial/README.md">
@@ -552,16 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="259">
-            <caret line="17" column="66" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Phone_Services/Add_Phone_Service/Add_Phone_Service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -607,18 +661,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py">
+    <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-end-line="151" selection-end-column="10" />
+        <state relative-caret-position="119">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="14" />
           <folding>
-            <element signature="e#520#749#0" />
-            <element signature="e#781#1222#0" />
-            <element signature="e#1243#1366#0" />
-            <element signature="e#1393#1511#0" />
-            <element signature="e#1548#1586#0" />
-            <element signature="e#1682#2572#0" />
-            <element signature="e#2643#2793#0" />
+            <element signature="e#25#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,10 +698,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UDP/CreateUDP_by_DN.py">
+    <entry file="file://$PROJECT_DIR$/UDP/UpdateUDP_CFWD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" selection-end-line="270" selection-end-column="10" />
+        <state relative-caret-position="578">
+          <caret line="116" selection-start-line="116" selection-end-line="129" selection-end-column="54" />
+          <folding>
+            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#535#764#0" />
+            <element signature="e#796#1237#0" />
+            <element signature="e#1258#1381#0" />
+            <element signature="e#1408#1526#0" />
+            <element signature="e#1563#1601#0" />
+            <element signature="e#1631#1671#0" />
+            <element signature="e#1767#2638#0" />
+            <element signature="e#2709#2859#0" />
+            <element signature="e#2898#4663#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanner/NumberScanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="18" selection-end-column="98" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+            <element signature="e#672#901#0" />
+            <element signature="e#933#1374#0" />
+            <element signature="e#1395#1518#0" />
+            <element signature="e#1547#2409#0" />
+            <element signature="e#2444#3519#0" />
+            <element signature="e#3546#4489#0" />
+            <element signature="e#4516#5453#0" />
+            <element signature="e#5480#6414#0" />
+            <element signature="e#6446#7340#0" />
+            <element signature="e#7370#8256#0" />
+            <element signature="e#8287#9228#0" />
+            <element signature="e#9251#9794#0" />
+            <element signature="e#9817#10354#0" />
+            <element signature="e#10377#10911#0" />
+            <element signature="e#10940#11363#0" />
+            <element signature="e#11390#11805#0" />
+            <element signature="e#11849#12270#0" />
+            <element signature="e#12314#12735#0" />
+            <element signature="e#12776#13194#0" />
+            <element signature="e#13259#13618#0" />
+            <element signature="e#13682#14038#0" />
+            <element signature="e#14073#14813#0" />
+            <element signature="e#14847#15315#0" />
+            <element signature="e#15348#15381#0" />
+            <element signature="e#15418#15732#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanner/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="344">
+            <caret line="23" selection-start-line="23" selection-end-line="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="310">
+            <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
