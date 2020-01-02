@@ -20,5 +20,8 @@ The python scripts are using Zeep to connect to CUCM API
 ## [Scanner Scripts](Scanner)
 >Search for something
 
+## [Call Routing Scripts](Routing)
+>Updating, Creating, deleting Translation Pattern/Partition/Calling Search Space.
+
 ## [Next one](https://github.com/lpdescamps)
 >I'm slow ...

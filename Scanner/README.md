@@ -21,3 +21,23 @@ under def main()
 * **wsdl**: The path where your wsdl is stored.
 * **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
 * **role**: To define the API user's permission. Here we need read permission so r. See the README.md for Create_Login
+
+
+## Find_DDI.py
+This script will scan the cucm and will write it to a csv when a end user email address match in the csv file if the DN in csv is set to not known
+
+>Details explaining each variables
+* **REGION**: Where is your cluster. See the README.md for Create_Login  
+* **USER**: The end user wildcard. For every users, use %
+* **FILE**: where you want the csv file to be written and what name you want.
+* **NEWFILE**: where you want the csv file to be written and what name you want.
+
+under def main()
+* **path**: The path where your credentials are stored. See the README.md for Create_Login
+* **wsdl**: The path where your wsdl is stored.
+* **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need read permission so r. See the README.md for Create_Login
+
+csv FILE sample
+Name,email,DN
+Louis-Philippe Descamps,louis@noemail.com,not known
