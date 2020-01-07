@@ -62,3 +62,17 @@ under def main()
 * **wsdl**: The path where your wsdl is stored.
 * **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
 * **role**: To define the API user's permission. Here we need read permission so rwx. See the README.md for Create_Login
+
+
+## List_Pt_in_Css.py
+This script will list all the partitions in a calling search space using a keyword.
+
+>Details explaining each variables
+* **REGION**: Where is your cluster. See the README.md for Create_Login
+* **CSS**: The calling search space to be found. Just use a keyword, it doesnt need to be specific
+
+under def main()
+* **path**: The path where your credentials are stored. See the README.md for Create_Login
+* **wsdl**: The path where your wsdl is stored.
+* **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need read permission so r. See the README.md for Create_Login
