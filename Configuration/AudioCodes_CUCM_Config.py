@@ -485,14 +485,14 @@ def main():
     client = Client(wsdl=wsdl, transport=transport)
     axl = client.create_service(binding_name, address)
 
-    print("Creating {}".format(STSP))
+    print("Creating Sip Trunk Security Profile {} for AudioCodes".format(STSP))
     addstsp(axl, STSP)
 
-    print("Creating {}".format(SPI))
+    print("Creating Sip Trunk Profile {} for AudioCodes".format(SPI))
     addspi(axl, SPI)
 
     for pt in PT:
-        print("Creating {}".format(pt['name'].format(REGION)))
+        print("Creating Partitions {} for AudioCodes".format(pt['name'].format(REGION)))
         addpt(axl, pt['name'].format(REGION), pt['desc'])
 
     for css in CSS:
@@ -501,7 +501,7 @@ def main():
         pt = css['pt'].split(":")
         pt_dict = [dict(zip(('routePartitionName', 'index'), (pt[index].format(REGION), index))) for index in range(0, len(pt))]
 
-        print("Creating {}".format(name))
+        print("Creating Calling Search Space {} for AudioCodes".format(name))
         addcss(axl, name, desc, pt_dict)
 
     print("Creating the Audio Codec Preference List for AudioCodes")
@@ -524,10 +524,6 @@ def main():
 
     print("Creating the Route List for AudioCodes")
     addRL(axl)
-
-    for rp in RP:
-        print("Creating the Route Pattern {} for AudioCodes".format(rp['pattern']))
-        addRP(axl, rp['pattern'], rp['desc'], rp['pt'].format(REGION))
 
     for rp in RP:
         print("Creating the Route Pattern {} for AudioCodes".format(rp['pattern']))
