@@ -1,0 +1,10 @@
+user,language,udp,model,desc,ptn,local,dirn,dnpt,llabel,ldisplay,ldisplay1
+BEBR,fr,BE_8845-udp,Cisco 8845,Test BE,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+32123456789,EU_Internal,Test BE,Test BE,Test BE
+FRPA,fr,FR_8845-udp,Cisco 8845,Test FR,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+33123456789,EU_Internal,Test FR,Test FR,Test FR
+ESMA,es,ES_8845-udp,Cisco 8845,Test ES,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+34123456789,EU_Internal,Test ES,Test ES,Test ES
+IEDU,gb,IE_8845-udp,Cisco 8845,Test IE,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+35123456789,EU_Internal,Test IE,Test IE,Test IE
+ITMI,it,IT_8845-udp,Cisco 8845,Test IT,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+39123456789,EU_Internal,Test IT,Test IT,Test IT
+UKLN,gb,GB_8845-udp,Cisco 8845,Test GB,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+44123456789,EU_Internal,Test GB,Test GB,Test GB
+DKCO,dk,DK_8845-udp,Cisco 8845,Test DK,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+45123456789,EU_Internal,Test DK,Test DK,Test DK
+SWST,se,SE_8845-udp,Cisco 8845,Test SE,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+46123456789,EU_Internal,Test SE,Test SE,Test SE
+GEMU,de,DE_8845-udp,Cisco 8845,Test DE,GL_UUID_1LSD2URISDs_SIP-pbtc,,\+49123456789,EU_Internal,Test DE,Test DE,Test DE

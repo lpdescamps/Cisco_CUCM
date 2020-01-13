@@ -59,3 +59,22 @@ under def main()
 * **wsdl**: The path where your wsdl is stored.
 * **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
 * **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login
+
+## CreateUDP_by_CSV
+This script will delete Line if exist, create UDP and updated end user  
+ - create a new UDP based on the requiered model.
+ - Pull information from End user to build the new UDP.
+ - It will add the udp to the end user BUT won't remove the old UDP.
+The UDP will have 2 uri but you can amend this under def addUDP
+
+The user locales are based on what locale has been installed on the cucm. Use print(language) to see what is currently installed
+
+>Details explaining each variables
+* **REGION**: Where is your cluster. See the README.md for Create_Login  
+* **FILE**: CSV file location. Check the udp.csv for example
+
+under def main()
+* **path**: The path where your credentials are stored. See the README.md for Create_Login
+* **wsdl**: The path where your wsdl is stored.
+* **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login
