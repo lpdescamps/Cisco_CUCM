@@ -26,5 +26,6 @@ The python scripts are using Zeep to connect to CUCM API
 ## [Configuration](Configuration)
 >Scripts that I used to configure multiple elements in CUCM
 
-## [Next one](https://github.com/lpdescamps)
->I'm slow ...
+## [Telepresence Video](Telepresence)
+>Scripts that I used to configure video codec in CUCM or on the codec itself
+
