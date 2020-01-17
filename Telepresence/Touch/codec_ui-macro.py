@@ -25,14 +25,15 @@ from time import sleep, strftime
 import http.client as http_client
 import logging
 
-DRY_RUN = "enable"  # or "disable"
+DRY_RUN = "disable"  # or "disable"
 
 REGION = 'EO'
-IPS = ['10.24.136.242']
-#IPS = ['*']
+IPS = ['*']
 
-DNS1 = '10.20.64.11'
-DNS2 = '10.20.64.16'
+DNS1 = '8.8.8.8'
+DNS2 = '9.9.9.9'
+
+
 DNS3 = ''
 
 NAME = 'IT_Help'
@@ -231,6 +232,14 @@ def main():
 
     models = sql_getmodel()
 
+    if DRY_RUN == "disable":
+        if confirm() is True:
+            pass
+        else:
+            quit()
+    else:
+        pass
+
     for result in rawresult:
         if 'Ok' in result['ReturnCode']:
             for device in result['CmDevices']['item']:
@@ -252,33 +261,30 @@ def main():
                         macros = '/Macros' in codec_conf
 
                         if DRY_RUN == "disable":
-                            if confirm() is True:
-                                print("!!!!!!!! DRY RUN IS {}. CONFIGURATION CHANGES ARE TAKING PLACE. STOP THE SCRIPT IF NOT WANTED!!!!!!!!!!!!!".format(DRY_RUN))
-                                if touch and macros is True:
-                                    print("Compatible for button on {} {} model {}. Adding the button".format(mydict['Description'], mydict['Codec_IP'], mydict['Model']))
-                                    csv_codec(CSV_FILE, "Button Added", mydict)
-                                    print("Enabling Macro")
-                                    macro_editor(a, mydict['Codec_IP'], 'On')
-                                    sleep(3)
-                                    print("Uploading Macro")
-                                    upload_macro(a, mydict['Codec_IP'], NAME, JS_MACRO)
-                                    sleep(3)
-                                    enable_macro_file(a, mydict['Codec_IP'], NAME)
-                                    sleep(3)
-                                    macro_editor(a, mydict['Codec_IP'], 'Off')
-                                    sleep(3)
-                                    macro_editor(a, mydict['Codec_IP'], 'On')
-                                    sleep(3)
-                                    print("Uploading UserInterface")
-                                    upload_inroom(a, mydict['Codec_IP'], XML_INROOM)
-                                    print("Adding DNS {}, {}, {} for codec {} {}".format(DNS1, DNS2, DNS3, mydict['Description'], mydict['Codec_IP']))
-                                    dns(a, mydict['Codec_IP'], dns1=DNS1, dns2=DNS2, dns3=DNS3)
+                            print("!!!!!!!! DRY RUN IS {}. CONFIGURATION CHANGES ARE TAKING PLACE. STOP THE SCRIPT IF NOT WANTED!!!!!!!!!!!!!".format(DRY_RUN))
+                            if touch and macros is True:
+                                print("Compatible for button on {} {} model {}. Adding the button".format(mydict['Description'], mydict['Codec_IP'], mydict['Model']))
+                                csv_codec(CSV_FILE, "Button Added", mydict)
+                                print("Enabling Macro")
+                                macro_editor(a, mydict['Codec_IP'], 'On')
+                                sleep(3)
+                                print("Uploading Macro")
+                                upload_macro(a, mydict['Codec_IP'], NAME, JS_MACRO)
+                                sleep(3)
+                                enable_macro_file(a, mydict['Codec_IP'], NAME)
+                                sleep(3)
+                                macro_editor(a, mydict['Codec_IP'], 'Off')
+                                sleep(3)
+                                macro_editor(a, mydict['Codec_IP'], 'On')
+                                sleep(3)
+                                print("Uploading UserInterface")
+                                upload_inroom(a, mydict['Codec_IP'], XML_INROOM)
+                                print("Adding DNS {}, {}, {} for codec {} {}".format(DNS1, DNS2, DNS3, mydict['Description'], mydict['Codec_IP']))
+                                dns(a, mydict['Codec_IP'], dns1=DNS1, dns2=DNS2, dns3=DNS3)
 
-                                else:
-                                    print("Not compatible for button on {} {} model {}. Skipping the button".format(mydict['Description'], mydict['Codec_IP'], mydict['Model']))
-                                    csv_codec(CSV_FILE, "Not compatible", mydict)
                             else:
-                                quit()
+                                print("Not compatible for button on {} {} model {}. Skipping the button".format(mydict['Description'], mydict['Codec_IP'], mydict['Model']))
+                                csv_codec(CSV_FILE, "Not compatible", mydict)
 
                         else:
                             print("!!!!!!!! DRY RUN IS {}. NO CONFIGURATION CHANGES ARE TAKING PLACE. AUDITING ONLY!!!!!!!!!!!!!".format(DRY_RUN))
