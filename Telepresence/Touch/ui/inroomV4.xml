@@ -1,0 +1,125 @@
+<Extensions>
+  <Version>1.6</Version>
+  <Panel>
+    <PanelId>panel_4</PanelId>
+    <Type>Statusbar</Type>
+    <Icon>Info</Icon>
+    <Order>1</Order>
+    <Color>#FF3D67</Color>
+    <Name>Request IT Support</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>Please tap one of the buttons below</Name>
+      <Row>
+        <Name/>
+        <Widget>
+          <WidgetId>btnImmediateHelp</WidgetId>
+          <Name>I require immediate assistance</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>widget_2</WidgetId>
+          <Name>Let us know there's an issue</Name>
+          <Type>Text</Type>
+          <Options>size=4;fontSize=normal;align=center</Options>
+        </Widget>
+        <Widget>
+          <WidgetId>btnUrgentTeams</WidgetId>
+          <Name>Can't join meeting</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+        <Widget>
+          <WidgetId>btnNonUrgentAudio</WidgetId>
+          <Name>No TV Audio</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+        <Widget>
+          <WidgetId>btnNotUrgentTelephone</WidgetId>
+          <Name>Telephone issues</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+        <Widget>
+          <WidgetId>btnNonUrgentEquipment</WidgetId>
+          <Name>Missing equipment</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+        <Widget>
+          <WidgetId>btnNotUrgentHDMI</WidgetId>
+          <Name>HDMI issues</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+        <Widget>
+          <WidgetId>btnNotUrgentOther</WidgetId>
+          <Name>Other issue</Name>
+          <Type>Button</Type>
+          <Options>size=2</Options>
+        </Widget>
+      </Row>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>btnReportFacilities</WidgetId>
+          <Name>Report issue to facilities</Name>
+          <Type>Button</Type>
+          <Options>size=4</Options>
+        </Widget>
+      </Row>
+      <PageId>Request_IT_Help</PageId>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+  <Panel>
+    <PanelId>panel_2</PanelId>
+    <Type>Home</Type>
+    <Icon>Camera</Icon>
+    <Order>2</Order>
+    <Name>Join Skype Meeting</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>Joining</Name>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>text</WidgetId>
+          <Name>Skype Meeting is being joined</Name>
+          <Type>Text</Type>
+          <Options>size=4;align=center;fontSize=normal</Options>
+        </Widget>
+      </Row>
+      <PageId>speed_dial</PageId>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+  <Panel>
+    <PanelId>panel_1</PanelId>
+    <Type>Home</Type>
+    <Icon>Camera</Icon>
+    <Order>3</Order>
+    <Color>#D541D8</Color>
+    <Name>Join Teams Meeting</Name>
+    <ActivityType>Custom</ActivityType>
+    <Page>
+      <Name>Joining</Name>
+      <Row>
+        <Name>Row</Name>
+        <Widget>
+          <WidgetId>text</WidgetId>
+          <Name>Teams Meeting is being joined</Name>
+          <Type>Text</Type>
+          <Options>size=4;align=center;fontSize=normal</Options>
+        </Widget>
+      </Row>
+      <PageId>speed_dial_teams</PageId>
+      <Options>hideRowNames=1</Options>
+    </Page>
+  </Panel>
+</Extensions>

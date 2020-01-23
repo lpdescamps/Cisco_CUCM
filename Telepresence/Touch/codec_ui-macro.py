@@ -32,13 +32,11 @@ IPS = ['*']
 
 DNS1 = '8.8.8.8'
 DNS2 = '9.9.9.9'
-
-
 DNS3 = ''
 
 NAME = 'IT_Help'
 JS_MACRO = r'macro\IT_Help.js'
-XML_INROOM = r'ui\inroomV3.xml'
+XML_INROOM = r'ui\inroomV4.xml'
 #CSV_FILE = r"C:\shared\codec\{} {}{}".format("Cisco Devices compatible with new support button", strftime("%Y%m%d-%H%M%S"), '.csv')
 CSV_FILE = r"C:\shared\codec\{} {}{}".format("Cisco Devices compatible with new support button", strftime("%Y%m%d"), '.csv')
 
