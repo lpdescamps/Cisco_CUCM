@@ -11,12 +11,13 @@ from cryptography.fernet import Fernet
 from pathlib import Path
 from zeep import exceptions
 import csv
+from time import sleep
 
-REGION = 'eo'
-CSS = 'EO_TP_ACSBC-css'
-PT = 'EO_TP_ACSBC-pt'
-FILE = r"C:\shared\ac\py\pilot_TP_20191211_134410.csv"
-USERPT = 'EU_Internal'
+REGION = 'eu'
+CSS = 'eu_TP_ACSBC-css'
+PT = 'eu_TP_ACSBC-pt'
+FILE = r"C:\shared\ac\py\lidt.csv"
+USERPT = 'AU_INTERNAL_pt'
 
 def file(path, platform, role):
     username = path / REGION / platform / ('user_' + role + '.txt')
@@ -63,13 +64,34 @@ def addTP(client, dn, desc, pt, css):
 
     except exceptions.Fault:
         print('!!!!!!!!TP {} already exists for {}'.format(dn, desc))
-def updateLine(client, pattern, pt):
+
+def getcss(client, item, pt):
+
+     try:
+        result = client.getLine(pattern=item, routePartitionName=pt)['return']['line']
+
+        thedict = {
+            'call1st': result['callForwardAll']['callingSearchSpaceName']['_value_1'],
+            'call2nd': result['callForwardAll']['secondaryCallingSearchSpaceName']['_value_1'],
+            'cfur': result['callForwardNotRegistered']['callingSearchSpaceName']['_value_1'],
+            'cfurint': result['callForwardNotRegisteredInt']['callingSearchSpaceName']['_value_1']
+
+        }
+
+        return thedict
+
+     except:
+         print('getcss failed')
+         pass
+
+def updateLine(client, pattern, pt, call1st, call2nd, cfur, cfurint):
     try:
         return client.updateLine(**{
             'pattern': pattern,
             'routePartitionName': pt,
-            'callForwardNotRegistered': {'forwardToVoiceMail': 'false'},
-            'callForwardNotRegisteredInt': {'forwardToVoiceMail': 'false'}
+            'callForwardAll': {'forwardToVoiceMail': 'false', 'callingSearchSpaceName': call1st, 'secondaryCallingSearchSpaceName': call2nd, 'destination': ''},
+            'callForwardNotRegistered': {'forwardToVoiceMail': 'false', 'callingSearchSpaceName': cfur, 'destination': ''},
+            'callForwardNotRegisteredInt': {'forwardToVoiceMail': 'false', 'callingSearchSpaceName': cfurint, 'destination': ''}
         })
     except exceptions.Fault:
         print("!!!!!!!!DN doesn't exists for {}".format(pattern))
@@ -89,8 +111,9 @@ def main():
     transport = Transport(cache=SqliteCache(), session=session, timeout=60)
     client = Client(wsdl=wsdl, transport=transport)
     axl = client.create_service(binding_name, address)
+    wait = 1
 
-    #for row in csv.DictReader(open(FILE, encoding="utf-8-sig")):
+    # for row in csv.DictReader(open(FILE, encoding="utf-8-sig")):
     for row in csv.DictReader(open(FILE)):
 
         ddi = row['DN'].replace(" ", "")
@@ -98,8 +121,15 @@ def main():
         print("DN: " + ddi + " Name:", row['Name'])
         addTP(axl, ddi, row['Name'] + "_MT", PT, CSS)
         print("DN: " + ddi)
-        updateLine(axl, ddi, USERPT)
+        fcss = getcss(axl, ddi, USERPT)
 
+        try:
+            updateLine(axl, ddi, USERPT, fcss['call1st'], fcss['call2nd'], fcss['cfur'], fcss['cfurint'])
+        except:
+            print('updateLine failed')
+            pass
+        print("One more Gin&Tonic for Louis! wait for {} seconds".format(wait))
+        sleep(wait)
 
 if __name__ == '__main__':
     main()
