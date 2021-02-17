@@ -78,3 +78,20 @@ under def main()
 * **wsdl**: The path where your wsdl is stored.
 * **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
 * **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login
+
+## EM_Logout
+This script will check if UDP is logged in using an API sql query. If UDP is logged in, it will
+
+ - write in csv the Phone Device Name and User ID
+ - Logout the user if this function is uncommented in the script
+ - Log the user back in if this function is uncommented in the script. That could be used to refresh the account.
+
+>Details explaining each variables
+* **REGION**: Where is your cluster. See the README.md for Create_Login  
+* **FILE**: CSV file location that will be created when running the script.
+
+under def main()
+* **path**: The path where your credentials are stored. See the README.md for Create_Login
+* **wsdl**: The path where your wsdl is stored.
+* **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need full permission so rwx. See the README.md for Create_Login
