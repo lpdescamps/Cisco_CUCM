@@ -41,3 +41,19 @@ under def main()
 csv FILE sample
 Name,email,DN
 Louis-Philippe Descamps,louis@noemail.com,not known
+
+## Find_TP_fromPT.py
+This script will scan the cucm and will write it to a csv when a Translation Pattern is in a specific partition
+
+>Details explaining each variables
+* **REGION**: Where is your cluster. See the README.md for Create_Login  
+* **USER**: The end user wildcard. For every users, use %
+* **PTLEG**: The partition you want to search (change line 186)
+* **PTCIC**: The partition you want to search (change line 187)
+* **FILE**: where you want the csv file to be written and what name you want.
+
+under def main()
+* **path**: The path where your credentials are stored. See the README.md for Create_Login
+* **wsdl**: The path where your wsdl is stored.
+* **platform**: The platform we are using. I assume it would be CUCM. See the README.md for Create_Login
+* **role**: To define the API user's permission. Here we need read permission so r. See the README.md for Create_Login
