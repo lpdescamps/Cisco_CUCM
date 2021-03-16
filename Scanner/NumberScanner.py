@@ -18,6 +18,8 @@ PATTERN = '%'
 FILE = 'C://shared//API//' + REGION + '-Numbers_' + time.strftime("%Y%m%d-%H%M%S") + '.csv'
 NBS = {'222433', '222434', '222435', '222436', '222437', '222438', '222440', '255445', '255319', }
 
+# NBS = {'{}'.format(nb) for nb in range(4900000, 5000000)}
+
 
 def file(path, platform, role):
     username = path / REGION / platform / ('user_' + role + '.txt')
